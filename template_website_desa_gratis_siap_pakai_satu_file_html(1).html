@@ -1,0 +1,449 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Website Resmi Desa Leuwilaja</title>
+  <meta name="description" content="Website resmi Desa Leuwilaja – profil, sejarah, berita, layanan publik, administrasi, data, galeri, dan kontak."/>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700&display=swap" rel="stylesheet">
+  <style>
+    :root{
+      --bg:#0f172a; /* slate-900 */
+      --card:#111827; /* gray-900 */
+      --muted:#94a3b8; /* slate-400 */
+      --text:#e5e7eb; /* gray-200 */
+      --brand:#22c55e; /* emerald-500 */
+      --brand-600:#16a34a;
+      --ring:rgba(34,197,94,.35);
+      --shadow: 0 10px 30px rgba(2,6,23,.35);
+      --radius: 18px;
+    }
+    *{box-sizing:border-box}
+    html,body{margin:0;padding:0;font-family:Inter,system-ui,-apple-system,Segoe UI,Roboto,Ubuntu,Cantarell,'Helvetica Neue',Arial,'Noto Sans',sans-serif;background:linear-gradient(180deg,#0b1022 0%, #0f172a 60%, #0b1022 100%);color:var(--text)}
+    a{color:inherit;text-decoration:none}
+    img{max-width:100%;display:block;border-radius:12px}
+    .container{width:100%;max-width:1180px;margin:0 auto;padding:0 16px}
+
+    /* Navbar */
+    .nav{position:sticky;top:0;z-index:50;background:rgba(15,23,42,.75);backdrop-filter:saturate(140%) blur(10px);border-bottom:1px solid rgba(148,163,184,.12)}
+    .nav-inner{display:flex;align-items:center;justify-content:space-between;padding:12px 0}
+    .brand{display:flex;align-items:center;gap:12px;font-weight:700}
+    .brand img{width:42px;height:42px;border-radius:8px;object-fit:cover;border:1px solid rgba(148,163,184,.25);background:#fff}
+    .nav-links{display:flex;gap:8px;flex-wrap:wrap}
+    .nav-links a{padding:9px 12px;border-radius:12px;color:#cbd5e1}
+    .nav-links a:hover{background:rgba(148,163,184,.12);color:#fff}
+    .cta{background:var(--brand);padding:10px 14px;border-radius:12px;font-weight:600;color:#062814;box-shadow:0 6px 18px rgba(34,197,94,.35)}
+    .cta:hover{background:var(--brand-600)}
+
+    /* Hero */
+    .hero{position:relative;padding:72px 0 36px}
+    .hero-grid{display:grid;grid-template-columns:1.1fr .9fr;gap:28px}
+    .badge{display:inline-flex;align-items:center;gap:8px;padding:8px 12px;border-radius:999px;background:rgba(34,197,94,.12);color:#a7f3d0;border:1px solid rgba(34,197,94,.25)}
+    .title{font-size:42px;line-height:1.1;margin:14px 0 10px}
+    .lead{color:var(--muted);font-size:18px}
+    .hero-card{background:rgba(17,24,39,.75);padding:16px;border-radius:var(--radius);border:1px solid rgba(148,163,184,.14);box-shadow:var(--shadow)}
+    .stats{display:grid;grid-template-columns:repeat(3,1fr);gap:14px;margin-top:18px}
+    .stat{background:rgba(2,6,23,.6);border:1px solid rgba(148,163,184,.12);padding:14px;border-radius:16px;text-align:center}
+    .stat .num{font-weight:700;font-size:22px}
+    .stat .lbl{color:#9ca3af;font-size:12px}
+
+    /* Sections */
+    section{padding:48px 0}
+    .section-title{display:flex;align-items:center;justify-content:space-between;margin-bottom:14px}
+    .section-title h2{font-size:26px;margin:0}
+    .sub{color:var(--muted)}
+
+    .grid-3{display:grid;grid-template-columns:repeat(3,1fr);gap:16px}
+    .grid-2{display:grid;grid-template-columns:repeat(2,1fr);gap:16px}
+    .card{background:rgba(17,24,39,.75);border:1px solid rgba(148,163,184,.14);border-radius:var(--radius);box-shadow:var(--shadow);overflow:hidden}
+    .card-body{padding:14px}
+    .chip{display:inline-flex;padding:6px 10px;border-radius:999px;background:rgba(148,163,184,.14);font-size:12px;color:#cbd5e1}
+
+    /* Table */
+    table{width:100%;border-collapse:separate;border-spacing:0 10px}
+    th,td{text-align:left;padding:12px}
+    thead th{color:#cbd5e1;font-weight:600}
+    tbody tr{background:rgba(17,24,39,.6);border:1px solid rgba(148,163,184,.1)}
+    tbody tr td:first-child{border-top-left-radius:12px;border-bottom-left-radius:12px}
+    tbody tr td:last-child{border-top-right-radius:12px;border-bottom-right-radius:12px}
+
+    footer{border-top:1px solid rgba(148,163,184,.12);padding:28px 0;color:#9ca3af}
+
+    .btn{padding:10px 14px;border:1px solid rgba(148,163,184,.2);border-radius:12px;background:rgba(17,24,39,.6);color:#e5e7eb}
+    .btn:hover{border-color:rgba(148,163,184,.4)}
+
+    .quick{display:flex;gap:10px;flex-wrap:wrap}
+
+    @media(max-width:980px){
+      .hero-grid{grid-template-columns:1fr}
+      .grid-3{grid-template-columns:1fr}
+      .grid-2{grid-template-columns:1fr}
+      .nav-links{display:none}
+    }
+  </style>
+</head>
+<body>
+  <!-- NAVBAR -->
+  <nav class="nav">
+    <div class="container nav-inner">
+      <a href="#" class="brand">
+        <img src="assets/logo-desa.png" alt="Logo Desa Leuwilaja"/>
+        <div>
+          <div style="font-size:16px;">Desa Leuwilaja</div>
+          <div style="font-size:12px;color:#9ca3af">Kecamatan Sindangwangi, Kabupaten Majalengka</div>
+        </div>
+      </a>
+      <div class="nav-links">
+        <a href="#profil">Profil</a>
+        <a href="#berita">Berita</a>
+        <a href="#layanan">Layanan</a>
+        <a href="#administrasi">Administrasi</a>
+        <a href="#galeri">Galeri</a>
+        <a href="#data">Data</a>
+        <a href="#aparatur">Aparatur</a>
+        <a class="cta" href="#kontak">Kontak</a>
+      </div>
+    </div>
+  </nav>
+
+  <!-- HERO -->
+  <header class="hero">
+    <div class="container hero-grid">
+      <div>
+        <div class="badge">Website Resmi • Transparan & Melayani</div>
+        <h1 class="title">Wilujeng sumping di <span style="color:#a7f3d0">Desa Leuwilaja</span></h1>
+        <p class="lead">Portal informasi resmi desa: berita terbaru, data publik, layanan administrasi, dan wadah aspirasi warga. Template ini <b>gratis</b> dan siap dipakai.</p>
+        <div class="quick" style="margin-top:16px">
+          <a class="btn" href="#berita">📰 Berita</a>
+          <a class="btn" href="#layanan">📝 Ajukan Layanan</a>
+          <a class="btn" href="#administrasi">📖 Buku Administrasi</a>
+          <a class="cta" href="#unduh">⬇️ Unduh Template</a>
+        </div>
+        <div class="stats">
+          <div class="stat"><div class="num" id="statPenduduk">—</div><div class="lbl">Penduduk</div></div>
+          <div class="stat"><div class="num">2</div><div class="lbl">Dusun</div></div>
+          <div class="stat"><div class="num">98%</div><div class="lbl">Akses Internet</div></div>
+        </div>
+      </div>
+      <div class="hero-card">
+        <img src="assets/balai-desa.jpg" alt="Balai Desa Leuwilaja"/>
+        <div class="card-body" style="display:flex;justify-content:space-between;gap:12px;align-items:center">
+          <div>
+            <div style="font-weight:600">Agenda Terdekat</div>
+            <div class="sub">Musyawarah Desa • Balai Desa • <span id="tglAgenda">—</span></div>
+          </div>
+          <a class="btn" href="#agenda">Detail</a>
+        </div>
+      </div>
+    </div>
+  </header>
+
+  <!-- PROFIL -->
+  <section id="profil">
+    <div class="container">
+      <div class="section-title">
+        <h2>Profil & Sejarah</h2>
+        <span class="chip">Visi • Misi • Sejarah</span>
+      </div>
+      <div class="grid-2">
+        <div class="card">
+          <div class="card-body">
+            <h3 style="margin:0 0 8px">Visi</h3>
+            <p class="sub">“Terwujudnya Desa Leuwilaja yang maju, mandiri, religius, dan sejahtera melalui pelayanan publik yang cepat, transparan, dan partisipatif.”</p>
+            <h3 style="margin:16px 0 8px">Misi</h3>
+            <ul class="sub" style="margin:0 0 8px 18px;line-height:1.8">
+              <li>Peningkatan kualitas layanan administrasi desa.</li>
+              <li>Transparansi pengelolaan anggaran dan data.</li>
+              <li>Pemberdayaan UMKM dan potensi lokal.</li>
+              <li>Penguatan gotong royong dan literasi digital.</li>
+            </ul>
+          </div>
+        </div>
+        <div class="card">
+          <div class="card-body">
+            <h3 style="margin:0 0 8px">Sejarah Desa Leuwilaja</h3>
+            <p class="sub" style="white-space:pre-line">SEJARAH DESA LEUWILAJA…. Sekitar tahun 1740 M, Mbah Sapujagad sang penguasa Cirebon Girang—kemudian dikenal sebagai Mbah Pasawahan—mengutus dua punggawa, yaitu Koda dan Kodi, untuk menyiarkan Islam ke wilayah Rajagaluh yang kala itu masih beragama Hindu dan berada di bawah kekuasaan Kerajaan Ratu Galuh. Keduanya menetap di wilayah timur kekuasaan Ratu Galuh (kini Desa Balagedog). Dikisahkan Mbah Buyut Koda memiliki dua putra: Mbah Balagedog dan Mbah Jager. Mbah Buyut Balagedog menikah dengan seorang putri, adik Demang Rajagaluh. Sebagai maskawin, pihak mempelai pria memberikan tanah ±140 Ha berbatas Sungai Ciburuy di timur dan Sungai Cibalimbing di barat. Pihak mempelai wanita memberi tanah ±136,681 Ha berbatas Sungai Cibalimbing di timur dan Sungai Ciwaringin di barat. Kedua bidang tanah kemudian disatukan menjadi satu wilayah tersendiri, terpisah dari Balagedog dan Rajagaluh, yang dinamai Leuwilaja.
+
+Kata “Leuwilaja” berasal dari gabungan kata Sunda “Leuwih” (lebih) dan “dihaja” (disengaja). Karena pelafalan, berubah menjadi “Leuwih-haja”, lalu disingkat menjadi “Leuwilaja”.</p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- BERITA -->
+  <section id="berita">
+    <div class="container">
+      <div class="section-title">
+        <h2>Berita Terbaru</h2>
+        <div style="display:flex;gap:8px">
+          <input id="cariBerita" placeholder="Cari berita…" class="btn" style="min-width:220px"/>
+          <button class="btn" onclick="sortBerita()">Urutkan Tanggal</button>
+        </div>
+      </div>
+      <div id="listBerita" class="grid-3"></div>
+    </div>
+  </section>
+
+  <!-- LAYANAN -->
+  <section id="layanan">
+    <div class="container">
+      <div class="section-title">
+        <h2>Layanan Administrasi</h2>
+        <span class="sub">Ajukan surat keterangan, domisili, dan lainnya secara online.</span>
+      </div>
+      <div class="grid-3">
+        <div class="card"><div class="card-body"><h3 style="margin:0 0 4px">Surat Keterangan (SK)</h3><p class="sub">Pengajuan SK untuk keperluan administrasi.</p><a class="btn" href="#form" onclick="openForm('Surat Keterangan')">Ajukan</a></div></div>
+        <div class="card"><div class="card-body"><h3 style="margin:0 0 4px">Surat Domisili</h3><p class="sub">Permohonan keterangan domisili.</p><a class="btn" href="#form" onclick="openForm('Surat Domisili')">Ajukan</a></div></div>
+        <div class="card"><div class="card-body"><h3 style="margin:0 0 4px">Legalitas UMKM</h3><p class="sub">Rekomendasi & pendampingan NIB/izin usaha.</p><a class="btn" href="#form" onclick="openForm('Legalitas UMKM')">Ajukan</a></div></div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ADMINISTRASI (BUKU) -->
+  <section id="administrasi">
+    <div class="container">
+      <div class="section-title">
+        <h2>Administrasi Desa</h2>
+        <span class="sub">Buku-buku administrasi sesuai Permendagri</span>
+      </div>
+      <div class="grid-3">
+        <div class="card"><div class="card-body"><h3 style="margin:0 0 6px">Administrasi Umum</h3><p class="sub">Buku agenda, inventaris, surat keluar/masuk.</p><a class="btn" href="#" onclick="alert('Contoh: tautkan ke Google Sheet/Drive.');return false;">Buka</a></div></div>
+        <div class="card"><div class="card-body"><h3 style="margin:0 0 6px">Administrasi Kependudukan</h3><p class="sub">Penduduk, mutasi, kelahiran & kematian.</p><a class="btn" href="#" onclick="alert('Contoh: tautkan ke Google Sheet/Drive.');return false;">Buka</a></div></div>
+        <div class="card"><div class="card-body"><h3 style="margin:0 0 6px">Administrasi Keuangan</h3><p class="sub">APBDes, buku kas umum, pajak, bank.</p><a class="btn" href="#" onclick="alert('Contoh: tautkan ke Google Sheet/Drive.');return false;">Buka</a></div></div>
+        <div class="card"><div class="card-body"><h3 style="margin:0 0 6px">Administrasi BPD</h3><p class="sub">Risalah musyawarah, keputusan, daftar hadir.</p><a class="btn" href="#" onclick="alert('Contoh: tautkan ke Google Sheet/Drive.');return false;">Buka</a></div></div>
+        <div class="card"><div class="card-body"><h3 style="margin:0 0 6px">Administrasi Pembangunan</h3><p class="sub">RKPDes, SDGs Desa, buku kegiatan.</p><a class="btn" href="#" onclick="alert('Contoh: tautkan ke Google Sheet/Drive.');return false;">Buka</a></div></div>
+      </div>
+    </div>
+  </section>
+
+  <!-- GALERI -->
+  <section id="galeri">
+    <div class="container">
+      <div class="section-title">
+        <h2>Galeri</h2>
+        <span class="sub">Kegiatan & potensi desa</span>
+      </div>
+      <div class="grid-3">
+        <img src="https://images.unsplash.com/photo-1498596860823-034d5d9dcac8?q=80&w=1600&auto=format&fit=crop" alt="Panen raya"/>
+        <img src="https://images.unsplash.com/photo-1500530855697-b586d89ba3ee?q=80&w=1600&auto=format&fit=crop" alt="Kerajinan bambu"/>
+        <img src="https://images.unsplash.com/photo-1521401830884-6c03c1c87ebb?q=80&w=1600&auto=format&fit=crop" alt="Gotong royong"/>
+      </div>
+    </div>
+  </section>
+
+  <!-- DATA DESA -->
+  <section id="data">
+    <div class="container">
+      <div class="section-title">
+        <h2>Data Singkat</h2>
+        <a href="#" class="btn" onclick="downloadCSV()">Unduh CSV</a>
+      </div>
+      <div class="card"><div class="card-body">
+        <div class="sub" style="margin-bottom:10px">Rekap kependudukan per dusun:</div>
+        <div style="overflow-x:auto">
+          <table id="tabelData">
+            <thead><tr><th>Dusun</th><th>KK</th><th>Jiwa</th><th>Laki-laki</th><th>Perempuan</th></tr></thead>
+            <tbody></tbody>
+          </table>
+        </div>
+      </div></div>
+    </div>
+  </section>
+
+  <!-- APARATUR -->
+  <section id="aparatur">
+    <div class="container">
+      <div class="section-title">
+        <h2>Aparatur Desa</h2>
+        <span class="sub">Periode 2021–2029</span>
+      </div>
+      <div class="grid-3" id="listAparatur"></div>
+    </div>
+  </section>
+
+  <!-- KONTAK -->
+  <section id="kontak">
+    <div class="container">
+      <div class="section-title">
+        <h2>Kontak & Aspirasi</h2>
+        <span class="sub">Silakan kirim saran/aduan Anda</span>
+      </div>
+      <div class="grid-2">
+        <div class="card"><div class="card-body">
+          <form id="formAspirasi" onsubmit="kirimAspirasi(event)">
+            <label>Nama<br><input class="btn" name="nama" required placeholder="Nama Anda"></label><br><br>
+            <label>No. WhatsApp<br><input class="btn" name="wa" required placeholder="08xxxxxxxxxx" pattern="[0-9]{9,13}"></label><br><br>
+            <label>Pesan/Aspirasi<br><textarea class="btn" name="pesan" required rows="4" placeholder="Tulis pesan"></textarea></label><br><br>
+            <button class="cta" type="submit">Kirim via WhatsApp</button>
+          </form>
+        </div></div>
+        <div class="card"><div class="card-body">
+          <h3 style="margin-top:0">Alamat Kantor Desa</h3>
+          <p class="sub">JL. LONTANGSARI NO. 01, Desa Leuwilaja, Kec. Sindangwangi, Kab. Majalengka, 45474</p>
+          <p class="sub">Email: pemdes.leuwilaja@example.go.id • Telp: (0233) 000000</p>
+          <div id="map" style="height:260px;border-radius:12px;background:radial-gradient(circle at 30% 30%, #1f2937, #0b1022)"></div>
+        </div></div>
+      </div>
+    </div>
+  </section>
+
+  <!-- UNDUH TEMPLATE -->
+  <section id="unduh">
+    <div class="container">
+      <div class="section-title"><h2>Unduh & Hosting Gratis</h2></div>
+      <div class="card"><div class="card-body">
+        <ol class="sub" style="line-height:1.9;margin:0">
+          <li>Klik <b>Unduh File HTML</b> untuk menyimpan template ini.</li>
+          <li>Upload ke <b>GitHub Pages</b>, <b>Netlify</b>, atau <b>Cloudflare Pages</b>.</li>
+          <li>Ganti teks/foto sesuai kebutuhan desa (cukup edit file HTML ini).</li>
+        </ol>
+        <div class="quick" style="margin-top:14px">
+          <button class="btn" onclick="downloadSelf()">Unduh File HTML</button>
+          <a class="btn" href="#" onclick="window.scrollTo({top:0,behavior:'smooth'})">Kembali ke Atas</a>
+        </div>
+      </div></div>
+    </div>
+  </section>
+
+  <footer>
+    <div class="container" style="display:flex;justify-content:space-between;gap:12px;flex-wrap:wrap">
+      <div>© <span id="year"></span> Pemerintah Desa Leuwilaja</div>
+      <div class="sub">SINDANGKASIH SUGIH MUKTI</div>
+    </div>
+  </footer>
+
+  <!-- FAB WA -->
+  <a id="waFab" href="https://wa.me/6281234567890" target="_blank" aria-label="WhatsApp" style="position:fixed;right:18px;bottom:18px;background:#22c55e;width:56px;height:56px;border-radius:999px;display:flex;align-items:center;justify-content:center;box-shadow:0 10px 30px rgba(34,197,94,.45)">
+    <span style="font-size:28px">💬</span>
+  </a>
+
+  <script>
+    // ====== DATA RESMI DESA LEUWILAJA ======
+    const berita = [
+      {judul:'Pelatihan UMKM Digital', tanggal:'2025-08-10', ringkas:'Pelaku UMKM Leuwilaja mengikuti pelatihan pemasaran online di balai desa.'},
+      {judul:'Penyaluran BLT Dana Desa', tanggal:'2025-07-28', ringkas:'Pemdes menyalurkan BLT bagi 120 KPM sesuai regulasi.'},
+      {judul:'Kerja Bakti Irigasi', tanggal:'2025-08-15', ringkas:'Warga bergotong royong membersihkan saluran irigasi.'}
+    ];
+    const dataDusun = [
+      {dusun:'Lontangsari', kk:833, jiwa:2197, lk:1112, pr:1085},
+      {dusun:'Sunarsari', kk:813, jiwa:2059, lk:1062, pr:997}
+    ];
+    const aparatur = [
+      {nama:'SOIM', jab:'Kepala Desa'},
+      {nama:'JUHAERUDIN', jab:'Sekretaris Desa'},
+      {nama:'WIWIN WINARNI', jab:'Kaur Keuangan'},
+      {nama:'SUMARDI, SP', jab:'Kaur Umum & Tata Usaha'},
+      {nama:'INDRA GUNAWAN, SE', jab:'Kaur Perencanaan'},
+      {nama:'SAEPUDIN, S.Pd.I', jab:'Kasi Pelayanan'},
+      {nama:'ENGKUS KUSWANDI, S.IP', jab:'Kasi Pemerintahan'},
+      {nama:'SALMIN', jab:'Kasi Kesejahteraan'},
+      {nama:'BASORI, S.Ag', jab:'Kepala Dusun Lontangsari'},
+      {nama:'IWAN KUSWANTO, S.Pd', jab:'Kepala Dusun Sunarsari'},
+      {nama:'SULAEMAN, M.Pd.I', jab:'Ketua BPD'}
+    ];
+
+    // ====== INIT ======
+    const fmtID = d=> new Date(d).toLocaleDateString('id-ID', {year:'numeric',month:'long',day:'numeric'});
+
+    function renderBerita(list=berita){
+      const wrap = document.getElementById('listBerita');
+      wrap.innerHTML = '';
+      list.forEach(b=>{
+        const el = document.createElement('article');
+        el.className = 'card';
+        el.innerHTML = `
+          <div class="card-body">
+            <div class="chip">${fmtID(b.tanggal)}</div>
+            <h3 style="margin:8px 0">${b.judul}</h3>
+            <p class="sub">${b.ringkas}</p>
+            <div style="display:flex;gap:10px;margin-top:10px">
+              <a class="btn" href="#">Baca</a>
+              <a class="btn" href="#" onclick="hapusBerita('${b.judul}');return false;">Hapus</a>
+            </div>
+          </div>`;
+        wrap.appendChild(el);
+      });
+    }
+    function sortBerita(){
+      const sorted = [...berita].sort((a,b)=> new Date(b.tanggal)-new Date(a.tanggal));
+      renderBerita(sorted);
+    }
+    function hapusBerita(judul){ const idx = berita.findIndex(b=>b.judul===judul); if(idx>-1){ berita.splice(idx,1); renderBerita(); } }
+
+    function renderData(){
+      const tb = document.querySelector('#tabelData tbody');
+      tb.innerHTML = '';
+      let totalKK=0,totalJiwa=0,tlk=0,tpr=0;
+      dataDusun.forEach(r=>{
+        totalKK+=r.kk; totalJiwa+=r.jiwa; tlk+=r.lk; tpr+=r.pr;
+        tb.innerHTML += `<tr><td>${r.dusun}</td><td>${r.kk}</td><td>${r.jiwa}</td><td>${r.lk}</td><td>${r.pr}</td></tr>`;
+      });
+      tb.innerHTML += `<tr><td><b>Total</b></td><td><b>${totalKK}</b></td><td><b>${totalJiwa}</b></td><td><b>${tlk}</b></td><td><b>${tpr}</b></td></tr>`;
+      document.getElementById('statPenduduk').textContent = totalJiwa.toLocaleString('id-ID');
+    }
+
+    function renderAparatur(){
+      const wrap = document.getElementById('listAparatur');
+      wrap.innerHTML='';
+      aparatur.forEach(p=>{
+        const el = document.createElement('div');
+        el.className='card';
+        el.innerHTML = `
+          <img src="https://api.dicebear.com/9.x/initials/svg?seed=${encodeURIComponent(p.nama)}" alt="${p.nama}">
+          <div class="card-body">
+            <div style="font-weight:600">${p.nama}</div>
+            <div class="sub">${p.jab}</div>
+          </div>`;
+        wrap.appendChild(el);
+      });
+    }
+
+    document.getElementById('cariBerita').addEventListener('input', (e)=>{
+      const q = e.target.value.toLowerCase();
+      const filtered = berita.filter(b=> (b.judul+b.ringkas).toLowerCase().includes(q));
+      renderBerita(filtered);
+    });
+
+    function openForm(jenis){ alert('Formulir '+jenis+' akan dibuka. (Contoh: sesuaikan ke Google Form/link WhatsApp)'); }
+
+    function kirimAspirasi(e){
+      e.preventDefault();
+      const f = new FormData(e.target);
+      const nama=f.get('nama');
+      const wa=f.get('wa').replace(/^0/,'62');
+      const pesan=encodeURIComponent(`Halo, saya ${nama}.%0A%0A${f.get('pesan')}`);
+      window.open(`https://wa.me/${wa}?text=${pesan}`, '_blank');
+    }
+
+    function downloadCSV(){
+      const rows = [['Dusun','KK','Jiwa','Laki-laki','Perempuan'], ...dataDusun.map(d=>[d.dusun,d.kk,d.jiwa,d.lk,d.pr])];
+      const csv = rows.map(r=>r.join(',')).join('
+');
+      const blob = new Blob([csv], {type:'text/csv'});
+      const a = document.createElement('a');
+      a.href = URL.createObjectURL(blob);
+      a.download = 'data_desa.csv';
+      a.click();
+    }
+
+    function downloadSelf(){
+      const html = document.documentElement.outerHTML;
+      const blob = new Blob([html], {type:'text/html'});
+      const a = document.createElement('a');
+      a.href = URL.createObjectURL(blob);
+      a.download = 'index.html';
+      a.click();
+    }
+
+    // Init
+    renderBerita();
+    renderData();
+    renderAparatur();
+    document.getElementById('year').textContent = new Date().getFullYear();
+    document.getElementById('tglAgenda').textContent = new Date().toLocaleDateString('id-ID', {day:'2-digit', month:'long', year:'numeric'});
+  </script>
+</body>
+</html>
